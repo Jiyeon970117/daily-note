@@ -1,0 +1,6 @@
+@value dailyRed from '../../common/colors.css';
+
+.title{
+  color: dailyRed;
+  font-size: 2rem;
+}
