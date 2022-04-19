@@ -1,7 +1,5 @@
-import React from 'react';
-import { useLocation, useNavigate } from 'react-router-dom';
-import Footer from '../footer/footer';
-import Header from '../header/header';
+import React, { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import styles from './login.module.css'
 const Login = ({authService}) => {
   const navigate = useNavigate();
@@ -16,9 +14,15 @@ const Login = ({authService}) => {
     .then(data => gotoDaily(data.user.uid))
   }
 
+  useEffect(() => {
+    authService
+    .onAuthChange(user => {
+      user && gotoDaily(user.uid)
+    })
+  })
   return(
     <section className={styles.login}>
-      <Header />
+      <h1 className={styles.title}>Sing In</h1>
       <div>
         <ul className={styles.list}>
           <li className={styles.item}>

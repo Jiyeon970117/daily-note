@@ -1,7 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,500&display=swap');
 
+
 .title{
   font-family: 'Roboto', sans-serif;;
   font-size: 3rem;
-  margin-bottom: 0;
+  /* margin-bottom: 0; */
+}
+
+.logout{
+  position: absolute;
+  top:3%;
+  right: 2%;
+  padding: 0.5em;
+  outline: 0;
+  cursor: pointer;
+  border: 0;
 }

@@ -1,7 +1,33 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import styles from './daily.module.css'
-const Daily = (props) => (
-    <h2 className={styles.title}>여기는 데일리 페이지입니다.</h2>
-  );
+import Header from '../header/header';
+import { useNavigate } from 'react-router-dom';
+const Daily = ({authService}) => {
+  const navigate = useNavigate();
+  const onLogout = () => {
+    authService.logout();
+  }
+  
+  useEffect(() => {
+    authService.onAuthChange( user => {
+      if(!user){
+        navigate('/')
+      }
+    })
+  })
+  return(
+    <section className={styles.daily}>
+      <Header onLogout={onLogout} />
+        <ul className={styles.list}>
+          <li className={styles.item}>
+            <button className={styles.button}>Daily</button>
+          </li>
+          <li className={styles.item}>
+            <button className={styles.button}>TodoList</button>
+          </li>
+        </ul>
+    </section>
+  )
+};
 
 export default Daily;

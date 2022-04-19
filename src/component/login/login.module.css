@@ -1,4 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,500&display=swap');
 @value dailyBlack, dailyWhite from '../../common/colors.css';
+
+.title{
+  font-family: 'Roboto', sans-serif;;
+  font-size: 3rem;
+  margin-bottom: 0;
+}
 
 .login{
   width: 30rem;
